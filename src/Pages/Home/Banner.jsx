@@ -4,8 +4,7 @@ import img3 from "../../assets/images/img3.jpg";
 import img4 from "../../assets/images/img4.jpg";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
+import "aos/dist/aos.css"; 
 AOS.init();
 
 const Banner = () => {

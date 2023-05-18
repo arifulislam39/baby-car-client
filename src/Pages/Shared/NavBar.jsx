@@ -15,7 +15,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-slate-800 h-36 text-white">
+    <div className="navbar sticky top-0 z-10 bg-slate-800 h-36 text-white">
       <div className="navbar-start">
         <div className="dropdown text-black">
           <label

@@ -13,13 +13,16 @@ const Gallery = () => {
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="https://i.ibb.co/hmXMD2J/img3.jpg"
+                data-aos="fade-down-right"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://i.ibb.co/Pmhbqq0/Electric-Car-for-Kids-Tech-Toys-for-Kids-New-Model-Baby-Boss-Car.jpg"
+                src="https://i.ibb.co/Pmhbqq0/Electric-Car-for-Kids-Tech-Toys-for-Kids-New-Model-Baby-Boss-Car.jpg" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
               />
             </div>
             <div className="w-full p-1 md:p-2">
@@ -50,13 +53,17 @@ const Gallery = () => {
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
                 src="https://i.ibb.co/GPvQ6cj/2-hours-Rapid-charge-2-4-G-Bluetooth-kids-ride-on-toy-car-kids-electric-cars-with-jpg-640x640.jpg"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://i.ibb.co/8zVycPv/81-HRk-Ns-VWQL-SX522.jpg"
+                src="https://i.ibb.co/8zVycPv/81-HRk-Ns-VWQL-SX522.jpg" data-aos="fade-up-left"
+                data-aos-duration="3000"
               />
             </div>
           </div>
