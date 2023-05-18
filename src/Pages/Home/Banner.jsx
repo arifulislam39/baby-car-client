@@ -3,15 +3,20 @@ import img2 from "../../assets/images/img2.jpg"
 import img3 from "../../assets/images/img3.jpg"
 import img4 from "../../assets/images/img4.jpg"
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[600px]">
+    <div className="carousel w-full h-[600px] mt-20">
       <div id="slide1" className="carousel-item relative w-full ">
-        <img src={img1} className="w-full rounded-xl" />
+        <img src={img1} className="w-full rounded-xl"/>
 
         <div className="absolute rounded-xl flex items-center pl-16 h-full top-0 left-0 right-5 bottom-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0) 100%)]">
           <div className="text-white space-y-7 w-1/2">
-            <h2 className="text-7xl font-bold">
+            <h2 className="text-7xl font-bold" >
              Best Kids store.
             </h2>
             <h3 className="text-4xl font-bold">
