@@ -3,35 +3,36 @@ import logo from "../../assets/logo.png";
 
 const navItem = (
   <>
-    <li>
-      <Link to="/">Home</Link>
-    </li>
-    <li>
-      <Link to="/about">All Toys</Link>
-    </li>
-    <li>
-      <Link to="/bookings">My Toys</Link>
-    </li>
-    <li>
-      <Link to="services"> Add A Toy</Link>
-    </li>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/about">All Toys</Link>
+      </li>
+      <li>
+        <Link to="/bookings">My Toys</Link>
+      </li>
+      <li>
+        <Link to="services"> Add A Toy</Link>
+      </li>
 
-    <li>
-      <button>LogOut</button>
-    </li>
-    <li>
-      <Link to="/login">Login</Link>
-    </li>
+      <li>
+        <button>LogOut</button>
+      </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
 
-    <li>
-      <Link to="blog">Blogs</Link>
-    </li>
+      <li>
+        <Link to="blog">Blogs</Link>
+      </li>
+    
   </>
 );
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-500 h-28 mb-7">
+    <div className="navbar bg-slate-800 h-28 mb-7 text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,7 +59,7 @@ const NavBar = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          <img className="w-48 h-32" src={logo} alt="" />
+          <img className="w-48 h-20" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
