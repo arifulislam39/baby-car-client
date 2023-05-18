@@ -78,19 +78,24 @@ const NavBar = () => {
           <li>
             <Link to="/about">All Toys</Link>
           </li>
-          <li>
-            <Link to="/bookings">My Toys</Link>
-          </li>
-          <li>
-            <Link to="services"> Add A Toy</Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <Link to="/bookings">My Toys</Link>
+              </li>
+              <li>
+                <Link to="services"> Add A Toy</Link>
+              </li>
 
-          <li>
-            <button onClick={handleLogout}>LogOut</button>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
+              <li>
+                <button onClick={handleLogout}>LogOut</button>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          )}
 
           <li>
             <Link to="blog">Blogs</Link>

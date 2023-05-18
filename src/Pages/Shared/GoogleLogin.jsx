@@ -1,17 +1,23 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import google from "../../assets/images/google.png";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
   const { googleSignIn } = useContext(AuthContext);
+  const Navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
+        Navigate(from, { replace: true });
         console.log(result.user);
       })
       .catch((error) => {
-        console.log(error);
+        const errorMessage = error.message;
+        console.log(errorMessage);
       });
   };
 

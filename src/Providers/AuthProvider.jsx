@@ -12,7 +12,7 @@ import app from "../firebase/firebase.config";
 import { createContext, useEffect, useState } from "react";
 
 const auth = getAuth(app);
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
@@ -74,7 +74,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
 
-  
+
   const authInfo = {
     user,
     loading,
