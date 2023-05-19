@@ -10,7 +10,6 @@ const Registration = () => {
   const Navigate = useNavigate();
   const [error, setError] = useState("");
 
-
   //Registration
   const handleRegister = (event) => {
     event.preventDefault();
@@ -22,7 +21,6 @@ const Registration = () => {
     const photo = form.photo.value;
 
     console.log(name, email, password, photo);
-
 
     //pass valid
     if ((email, password)) {
@@ -63,8 +61,25 @@ const Registration = () => {
           <div className="card-body">
             <h1 className="text-3xl font-bold text-center">Registration </h1>
             <form onSubmit={handleRegister}>
-
-                {/* error message */}
+              {/* error message */}
+              {/* <div className="alert alert-error shadow-lg">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="stroke-current flex-shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span></span>
+                </div>
+              </div> */}
               <p className="text-red-600 border-2 border-purple-900">{error}</p>
               <div className="form-control">
                 <label className="label">

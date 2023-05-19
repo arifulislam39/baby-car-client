@@ -39,11 +39,11 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-          <a href="#slide4" className="btn btn-secondary btn-circle mr-5">
+        <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-5">
+          <a href="#slide4" className="btn btn-secondary btn-outline btn-circle mr-10">
             ❮
           </a>
-          <a href="#slide2" className="btn btn-secondary btn-circle">
+          <a href="#slide2" className="btn btn-secondary btn-outline btn-circle">
             ❯
           </a>
         </div>
@@ -70,11 +70,11 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-          <a href="#slide1" className="btn btn-secondary btn-circle mr-5">
+        <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-5">
+          <a href="#slide1" className="btn btn-secondary btn-outline btn-circle mr-10">
             ❮
           </a>
-          <a href="#slide3" className="btn btn-secondary btn-circle">
+          <a href="#slide3" className="btn btn-secondary btn-outline btn-circle">
             ❯
           </a>
         </div>
@@ -102,11 +102,11 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-          <a href="#slide2" className="btn btn-secondary btn-circle mr-5">
+        <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-5">
+          <a href="#slide2" className="btn btn-secondary btn-outline btn-circle mr-10">
             ❮
           </a>
-          <a href="#slide4" className="btn btn-secondary btn-circle">
+          <a href="#slide4" className="btn btn-secondary btn-outline btn-circle">
             ❯
           </a>
         </div>
@@ -130,11 +130,11 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-          <a href="#slide3" className="btn btn-secondary btn-circle mr-5">
+        <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-5">
+          <a href="#slide3" className="btn btn-secondary btn-outline btn-circle mr-10">
             ❮
           </a>
-          <a href="#slide1" className="btn btn-secondary btn-circle">
+          <a href="#slide1" className="btn btn-secondary btn-outline btn-circle">
             ❯
           </a>
         </div>
