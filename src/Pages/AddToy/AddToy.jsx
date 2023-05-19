@@ -1,0 +1,118 @@
+const AddToy = () => {
+  return (
+    <div className="max-w-7xl mx-auto">
+      <form>
+        <div className="card-body">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Toy Name</span>
+              </label>
+              <input
+                name="toy_name"
+                type="text"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                name="photo"
+                type="photo"
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Sub-Category</span>
+              </label>
+              <select id="cars" name="sub_category" className="input input-bordered input-primary">
+                <option value="car">Car</option>
+                <option value="racing_car">Racing Car</option>
+                <option value="jeep">Jeep</option>
+              </select>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Price</span>
+              </label>
+              <input
+                name="price"
+                type="text"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Rating</span>
+              </label>
+              <input
+                name="rating"
+                type="text"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Available Quantity</span>
+              </label>
+              <input
+                name="quantity"
+                type="text"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Seller Name</span>
+              </label>
+              <input
+                name="seller_name"
+                type="text"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Seller Email</span>
+              </label>
+              <input
+                name="seller_email"
+                type="email"
+                defaultValue=""
+                className="input input-bordered input-primary"
+              />
+            </div>
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Details Description</span>
+            </label>
+            <textarea
+              name="description"
+              type="text"
+              className="textarea textarea-primary"
+              placeholder="Type here....."
+            ></textarea>
+          </div>
+          <div className="form-control mt-6">
+            <input
+              className="btn btn-primary btn-block"
+              type="submit"
+              value="Add"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AddToy;

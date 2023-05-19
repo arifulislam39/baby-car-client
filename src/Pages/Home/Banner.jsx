@@ -21,7 +21,7 @@ const Banner = () => {
 
         <div className="absolute rounded-xl flex items-center pl-16 h-full top-0 left-0 right-5 bottom-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0) 100%)]">
           <div className="text-white space-y-7 w-1/2">
-            <h2 className="text-7xl font-bold">Best Kids store.</h2>
+            <h2 className="text-7xl font-bold">Best Kids Store.</h2>
             <h3 className="text-4xl font-bold">
               Electric Powered Kids Ride on Car Toy - yellow
             </h3>
@@ -53,8 +53,8 @@ const Banner = () => {
 
         <div className="absolute rounded-xl flex items-center pl-16 h-full top-0 left-0 right-5 bottom-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0) 100%)]">
           <div className="text-white space-y-7 w-1/2">
-            <h2 className="text-6xl font-bold">Best Kids store.</h2>
-            <h3 className="text-7xl font-bold">
+            <h2 className="text-7xl font-bold">Best Kids Store.</h2>
+            <h3 className="text-4xl font-bold">
               Racing Baby Big Electric Car Jeep
             </h3>
             <p>
@@ -84,7 +84,7 @@ const Banner = () => {
 
         <div className="absolute flex rounded-xl items-center pl-16 h-full top-0 left-0 right-5 bottom-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0) 100%)]">
           <div className="text-white space-y-7 w-1/2">
-            <h2 className="text-7xl font-bold">Best Kids store.</h2>
+            <h2 className="text-7xl font-bold">Best Kids Store.</h2>
             <h3 className="text-4xl font-bold">
               The Ferrari Battery Operated Ride On Car for Kids
             </h3>

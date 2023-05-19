@@ -1,6 +1,6 @@
 const Customer = () => {
   return (
-    <div className="font-bold text-center mt-10 mb-20">
+    <div className="font-bold text-center mt-20 mb-20">
       <h2 className="text-6xl">Customer Reviews</h2>
       <p className="mt-5">Our Belove Customer Testimonials</p>
       <div>

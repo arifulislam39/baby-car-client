@@ -45,13 +45,13 @@ const NavBar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">All Toys</Link>
+              <Link to="/allToys">All Toys</Link>
             </li>
             <li>
-              <Link to="/bookings">My Toys</Link>
+              <Link to="/myToys">My Toys</Link>
             </li>
             <li>
-              <Link to="services"> Add A Toy</Link>
+              <Link to="/addToy"> Add A Toy</Link>
             </li>
 
             <li>
@@ -76,15 +76,15 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">All Toys</Link>
+            <Link to="/allToys">All Toys</Link>
           </li>
           {user ? (
             <>
               <li>
-                <Link to="/bookings">My Toys</Link>
+                <Link to="/myToys">My Toys</Link>
               </li>
               <li>
-                <Link to="services"> Add A Toy</Link>
+                <Link to="/addToy"> Add A Toy</Link>
               </li>
 
               <li>
