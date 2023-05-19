@@ -82,6 +82,7 @@ const AddToy = () => {
                 <option value="car">Car</option>
                 <option value="racing_car">Racing Car</option>
                 <option value="jeep">Jeep</option>
+                <option value="truck">Truck</option>
               </select>
             </div>
             <div className="form-control">
@@ -124,7 +125,7 @@ const AddToy = () => {
               <input
                 name="seller_name"
                 type="text"
-                defaultValue={user?.displayName}
+                value={user?.displayName}
                 className="input input-bordered input-primary"
               />
             </div>
@@ -135,7 +136,7 @@ const AddToy = () => {
               <input
                 name="seller_email"
                 type="email"
-                defaultValue={user?.email}
+                value={user?.email}
                 className="input input-bordered input-primary"
               />
             </div>
