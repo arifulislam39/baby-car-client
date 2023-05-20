@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         {
           path:'/viewDetails/:id',
           element:<ViewDetails></ViewDetails>,
-          loader:({params})=> fetch(`http://localhost:5000/allToy/${params.id}`)
+          loader:({params})=> fetch(`https://baby-car-server.vercel.app/allToy/${params.id}`)
         },
         {
           path:"/myToys",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         {
           path:"updateToy/:id",
           element:<UpdateToy></UpdateToy>,
-          loader:({params})=>fetch(`http://localhost:5000/myToys/${params.id}`),
+          loader:({params})=>fetch(`https://baby-car-server.vercel.app/myToys/${params.id}`),
         }
        
        

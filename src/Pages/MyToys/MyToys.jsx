@@ -10,7 +10,7 @@ const {user}=useContext(AuthContext);
 
   //get logged user data from the database by email
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${user?.email}`)
+    fetch(`https://baby-car-server.vercel.app/allToys/${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setCars(result);
@@ -22,7 +22,7 @@ const {user}=useContext(AuthContext);
   const handleDelete = (id) => {
     const proceed = confirm("you  want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/myToys/${id}`, {
+      fetch(`https://baby-car-server.vercel.app/myToys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

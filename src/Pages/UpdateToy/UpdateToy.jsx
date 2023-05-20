@@ -22,7 +22,7 @@ const UpdateToy = () => {
     console.log(update);
 
     // update in to database
-    fetch(`http://localhost:5000/updateData/${_id}`, {
+    fetch(`https://baby-car-server.vercel.app/updateData/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

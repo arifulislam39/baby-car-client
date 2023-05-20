@@ -5,7 +5,7 @@ const OnSale = () => {
   console.log(products);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://baby-car-server.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.slice(-6));

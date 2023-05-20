@@ -31,7 +31,7 @@ const AddToy = () => {
 
     //console.log(add);
     // Toy add in to database
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://baby-car-server.vercel.app/addToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -8,7 +8,7 @@ const ShopByCategory = () => {
   const [fetchedData, setFetchedData] = useState("car");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/category/${fetchedData}`)
+    fetch(`https://baby-car-server.vercel.app/category/${fetchedData}`)
       .then((res) => res.json())
       .then((result) => {
         setData(result);
