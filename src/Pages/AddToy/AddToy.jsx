@@ -91,7 +91,7 @@ const AddToy = () => {
               </label>
               <input
                 name="price"
-                type="text"
+                type="number"
                 defaultValue=""
                 className="input input-bordered input-primary"
               />

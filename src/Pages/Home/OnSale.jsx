@@ -8,7 +8,7 @@ const OnSale = () => {
     fetch("http://localhost:5000/allToys")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data.slice(14));
+        setProducts(data.slice(-6));
       });
   }, []);
 
@@ -17,7 +17,6 @@ const OnSale = () => {
       <div className="text-center mt-20">
         <h2
           className="font-bold text-6xl mb-3"
-          style={{ fontFamily: "Lobster" }}
         >
           On Sale Products
         </h2>
