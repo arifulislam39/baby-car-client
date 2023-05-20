@@ -3,6 +3,7 @@ import CarsTable from "./CarsTable";
 
 const AllToys = () => {
   const [cars, setCars] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
@@ -12,9 +13,25 @@ const AllToys = () => {
       });
   }, []);
 
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/searchByToyName/${search}`)
+      .then((res) => res.json())
+      .then((data) => setCars(data));
+  };
+
   return (
-    <div className="max-w-7xl mx-auto w-full">
-      <h2>all toys coming</h2>
+    <div className="max-w-7xl mx-auto w-full mt-20">
+      <div>
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          type="text"
+          placeholder="Search"
+          className="input input-bordered"
+        />
+        <button className="btn btn-primary" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}
