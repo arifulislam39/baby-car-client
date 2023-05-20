@@ -30,8 +30,8 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {cars?.map((car) => (
-              <CarsTable car={car} key={car}></CarsTable>
+            {cars?.map((car, index) => (
+              <CarsTable car={car} index={index} key={car}></CarsTable>
             ))}
           </tbody>
         </table>

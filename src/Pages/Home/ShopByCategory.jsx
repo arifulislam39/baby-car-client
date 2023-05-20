@@ -7,9 +7,9 @@ const ShopByCategory = () => {
       <div className="text-center mt-10">
         <Tabs>
           <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
-            <Tab>Title 3</Tab>
+            <Tab>CAR</Tab>
+            <Tab>JEEP</Tab>
+            <Tab>TRUCK</Tab>
           </TabList>
 
           <TabPanel>

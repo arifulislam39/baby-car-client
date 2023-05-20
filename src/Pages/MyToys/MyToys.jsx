@@ -1,25 +1,28 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Providers/AuthProvider";
+
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const MyToys = () => {
-  const { user } = useContext(AuthContext);
+const {user}=useContext(AuthContext);
   const [cars, setCars] = useState([]);
+  console.log(cars);
 
   //get logged user data from the database by email
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+    fetch(`http://localhost:5000/allToys/${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setCars(result);
+        console.log(result);
       });
   }, [user]);
 
   //deleted single data from my toys
   const handleDelete = (id) => {
-    const proceed = confirm("are you sure you to want to delete?");
+    const proceed = confirm("you  want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/allToys/${id}`, {
+      fetch(`http://localhost:5000/myToys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -60,7 +63,7 @@ const MyToys = () => {
             {cars?.map((car, index) => (
               <tr key={car._id} className="border-2 border-black">
                 <th>{index + 1}</th>
-                <td className="mask mask-squircle w-12 h-12">
+                <td className="mask mask-squircle w-6 h-12">
                   <img src={car.photo} alt="Avatar Tailwind CSS Component" />
                 </td>
                 <td>{car.toy_name}</td>
@@ -71,7 +74,7 @@ const MyToys = () => {
                 <td>{car.description}</td>
                 <td>Blue</td>
                 <th>
-                  <Link to={`updateToy/${car._id}`}>
+                  <Link to={`/updateToy/${car._id}`}>
                     <button className="btn btn-ghost btn-xs">Update</button>
                   </Link>
                 </th>
