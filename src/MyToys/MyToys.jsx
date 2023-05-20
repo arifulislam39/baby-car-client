@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [cars, setCars] = useState([]);
 
+  //get logged user data from the database by email
   useEffect(() => {
     fetch(`http://localhost:5000/myToys/${user?.email}`)
       .then((res) => res.json())
@@ -12,10 +14,31 @@ const MyToys = () => {
         setCars(result);
       });
   }, [user]);
+
+  //deleted single data from my toys
+  const handleDelete = (id) => {
+    const proceed = confirm("are you sure you to want to delete?");
+    if (proceed) {
+      fetch(`http://localhost:5000/allToys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+
+            const remaining = cars.filter((car) => car._id !== id);
+            setCars(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
-        <table className="table w-full">
+        <table className="table table-zebra w-full">
           {/* head*/}
           <thead>
             <tr>
@@ -34,9 +57,9 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {cars?.map((car) => (
-              <tr key={car._id}>
-                <th>1</th>
+            {cars?.map((car, index) => (
+              <tr key={car._id} className="border-2 border-black">
+                <th>{index + 1}</th>
                 <td className="mask mask-squircle w-12 h-12">
                   <img src={car.photo} alt="Avatar Tailwind CSS Component" />
                 </td>
@@ -48,10 +71,19 @@ const MyToys = () => {
                 <td>{car.description}</td>
                 <td>Blue</td>
                 <th>
-                  <button className="btn btn-ghost btn-xs">Update</button>
+                  <Link to={`updateToy/${car._id}`}>
+                    <button className="btn btn-ghost btn-xs">Update</button>
+                  </Link>
                 </th>
                 <th>
-                  <button className="btn btn-ghost btn-xs">Delete</button>
+                  <button
+                    onClick={() => {
+                      handleDelete(car._id);
+                    }}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    Delete
+                  </button>
                 </th>
               </tr>
             ))}
