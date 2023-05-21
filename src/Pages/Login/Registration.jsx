@@ -3,6 +3,7 @@ import login from "../../assets/images/login.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import GoogleLogin from "../Shared/GoogleLogin";
+import Head from "../../HeadTitle/Head";
 
 const Registration = () => {
   const { createUser, userProfile, userProfileUpdate } =
@@ -53,6 +54,7 @@ const Registration = () => {
 
   return (
     <div className="hero min-h-screen bg-violet-300">
+      <Head title="REGISTRATION"></Head>
       <div className="hero-content flex-col lg:flex-row">
         <div className="mr-12 w-1/2">
           <img src={login} alt="" />

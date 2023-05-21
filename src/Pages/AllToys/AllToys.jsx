@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CarsTable from "./CarsTable";
+import Head from "../../HeadTitle/Head";
 
 const AllToys = () => {
   const [cars, setCars] = useState([]);
@@ -21,6 +22,7 @@ const AllToys = () => {
 
   return (
     <div className="max-w-7xl mx-auto w-full mt-20">
+      <Head title="ALL TOYS" />
       <div>
         <input
           onChange={(e) => setSearch(e.target.value)}

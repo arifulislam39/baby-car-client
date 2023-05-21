@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Head from "../../HeadTitle/Head";
 
 const UpdateToy = () => {
   const update = useLoaderData();
@@ -37,6 +38,7 @@ const UpdateToy = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <Head title="UPDATE TOY"></Head>
       <form onSubmit={handleUpdate}>
         <div className="card-body">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

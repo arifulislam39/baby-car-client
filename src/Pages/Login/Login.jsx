@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../Shared/GoogleLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Head from "../../HeadTitle/Head";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -34,6 +35,7 @@ const Login = () => {
 
   return (
     <div className="hero min-h-screen bg-violet-300">
+      <Head title="LOGIN"></Head>
       <div className="hero-content flex-col lg:flex-row">
         <div className="mr-12 w-1/2">
           <img src={login} alt="" />

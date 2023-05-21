@@ -1,5 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
+import Head from "../../HeadTitle/Head";
 
 const ViewDetails = () => {
   const data = useLoaderData();
@@ -10,6 +11,7 @@ const ViewDetails = () => {
 
   return (
     <div>
+      <Head title="VIEW DETAILS"></Head>
        <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head*/}

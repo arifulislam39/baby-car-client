@@ -2,10 +2,14 @@ import { useContext, useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Head from "../../HeadTitle/Head";
+
+//const option = [{ value: "price-ascending" }, { value: "price-descending" }];
 
 const MyToys = () => {
-const {user}=useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [cars, setCars] = useState([]);
+  const [selectOption, setSelectOption] = useState(null);
   console.log(cars);
 
   //get logged user data from the database by email
@@ -16,7 +20,7 @@ const {user}=useContext(AuthContext);
         setCars(result);
         console.log(result);
       });
-  }, [user]);
+  }, [user,selectOption]);
 
   //deleted single data from my toys
   const handleDelete = (id) => {
@@ -38,9 +42,20 @@ const {user}=useContext(AuthContext);
     }
   };
 
+  const handleSortOrderChange = event => {
+    setSelectOption(event.target.value);
+  };
+
+
+
   return (
     <div>
+      <Head title="MY TOYS"></Head>
       <div className="overflow-x-auto">
+      <select value={selectOption} onChange={handleSortOrderChange}>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
         <table className="table table-zebra w-full">
           {/* head*/}
           <thead>

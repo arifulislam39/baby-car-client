@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Head from "../../HeadTitle/Head";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -12,10 +13,11 @@ const AddToy = () => {
     const toy_name = form.toy_name.value;
     const photo = form.photo.value;
     const sub_category = form.sub_category.value;
-    const price = form.price.value;
+    const priceString = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
+    const price =parseInt(priceString)
 
     const add = {
       seller_name,
@@ -46,6 +48,7 @@ const AddToy = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <Head title="ADD TOYS"></Head>
       <form onSubmit={handleAddToy}>
         <div className="card-body">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -91,7 +94,6 @@ const AddToy = () => {
               </label>
               <input
                 name="price"
-                type="number"
                 defaultValue=""
                 className="input input-bordered input-primary"
               />
