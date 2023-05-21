@@ -21,25 +21,38 @@ const AllToys = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto w-full mt-20">
+    <div className="max-w-7xl mx-auto w-full">
       <Head title="ALL TOYS" />
       <div>
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Search"
-          className="input input-bordered"
-        />
-        <button className="btn btn-primary" onClick={handleSearch}>
-          Search
-        </button>
+        <div
+          className="hero h-52"
+          style={{
+            backgroundImage: `url("https://i.ibb.co/nfQFc6Y/31b8d6079a811d3d60072862e773ecb3.jpg")`,
+          }}
+        >
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="">
+              <h1 className="mb-5 text-5xl font-bold">ALL TOYS</h1>
+              <input
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                placeholder="Search"
+                className="input input-bordered mr-10 text-black"
+              />
+              <button className="btn btn-primary " onClick={handleSearch}>
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-10">
         <table className="table table-zebra w-full">
           {/* head */}
           <thead>
             <tr>
-              <th></th>
+              <td>#</td>
               <th>Seller Name</th>
               <th>Toy Name</th>
               <th>Sub Category</th>

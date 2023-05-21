@@ -99,7 +99,8 @@ const AddToy = () => {
               </label>
               <input
                 name="price"
-                defaultValue=""
+                defaultValue="$"
+                type="text"
                 className="input input-bordered input-primary"
               />
             </div>

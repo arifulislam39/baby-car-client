@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -22,7 +22,7 @@ const MyToys = () => {
         setCars(result);
         console.log(result);
       });
-  }, [user,selectOption]);
+  }, [user, selectOption]);
 
   //deleted single data from my toys
   const handleDelete = (id) => {
@@ -44,25 +44,45 @@ const MyToys = () => {
     }
   };
 
-  const handleSortOrderChange = event => {
+  const handleSortOrderChange = (event) => {
     setSelectOption(event.target.value);
   };
-
-
 
   return (
     <div>
       <Head title="MY TOYS"></Head>
+
+      <div>
+        <div
+          className="hero h-52"
+          style={{
+            backgroundImage: `url("https://i.ibb.co/nfQFc6Y/31b8d6079a811d3d60072862e773ecb3.jpg")`,
+          }}
+        >
+          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-content text-center text-neutral-content">
+            <div className="">
+              <h1 className="mb-5 text-5xl font-bold">MY TOYS</h1>
+
+              <select
+                className="select select-info w-full max-w-xs text-black"
+                value={selectOption}
+                onChange={handleSortOrderChange}
+              >
+                <option>Ascending</option>
+                <option>Descending</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="overflow-x-auto">
-      <select value={selectOption} onChange={handleSortOrderChange}>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
         <table className="table table-zebra w-full">
           {/* head*/}
           <thead>
             <tr>
-              <th></th>
+              <td>#</td>
               <th>Image</th>
               <th>Toy Name</th>
               <th>Sub Category</th>
@@ -79,7 +99,7 @@ const MyToys = () => {
           <tbody>
             {cars?.map((car, index) => (
               <tr key={car._id} className="border-2 border-black">
-                <th>{index + 1}</th>
+                <td>{index + 1}</td>
                 <td className="mask mask-squircle w-6 h-12">
                   <img src={car.photo} alt="Avatar Tailwind CSS Component" />
                 </td>
@@ -89,10 +109,11 @@ const MyToys = () => {
                 <td>{car.rating}</td>
                 <td>{car.quantity}</td>
                 <td>{car.description}</td>
-                <td>Blue</td>
+                <td>{car.seller_name}</td>
+                <td>{car.seller_email}</td>
                 <th>
                   <Link to={`/updateToy/${car._id}`}>
-                    <button className="btn btn-ghost btn-xs">Update</button>
+                    <button className="btn btn-xs">Update</button>
                   </Link>
                 </th>
                 <th>
@@ -100,7 +121,7 @@ const MyToys = () => {
                     onClick={() => {
                       handleDelete(car._id);
                     }}
-                    className="btn btn-ghost btn-xs"
+                    className="btn btn-xs"
                   >
                     Delete
                   </button>
