@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Head from "../../HeadTitle/Head";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -46,8 +48,11 @@ const AddToy = () => {
       });
   };
 
+  const notify = () => toast("Added Successfully!!!");
+
   return (
     <div className="max-w-7xl mx-auto">
+      <ToastContainer className="lg:text-3xl" />
       <Head title="ADD TOYS"></Head>
       <form onSubmit={handleAddToy}>
         <div className="card-body">
@@ -155,7 +160,7 @@ const AddToy = () => {
             ></textarea>
           </div>
           <div className="form-control mt-6">
-            <input
+            <input onClick={notify}
               className="btn btn-primary btn-block"
               type="submit"
               value="Add"

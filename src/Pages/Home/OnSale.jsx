@@ -2,15 +2,21 @@ import { useEffect, useState } from "react";
 
 const OnSale = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   console.log(products);
 
   useEffect(() => {
     fetch("https://baby-car-server.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data.slice(-6));
+        setProducts(data.slice(0,6));
+        setLoading(false)
       });
   }, []);
+
+  if (loading) {
+    return <div className="text-center"><progress className="progress w-56 ml-56 me-56 mt-10 mb-10 bg-red-500"></progress>;</div>
+  }
 
   return (
     <div>

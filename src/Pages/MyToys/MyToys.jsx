@@ -1,4 +1,6 @@
 import { useContext, useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -24,7 +26,7 @@ const MyToys = () => {
 
   //deleted single data from my toys
   const handleDelete = (id) => {
-    const proceed = confirm("you  want to delete?");
+    const proceed = confirm("Are you sure you want to delete it?");
     if (proceed) {
       fetch(`https://baby-car-server.vercel.app/myToys/${id}`, {
         method: "DELETE",
@@ -33,7 +35,7 @@ const MyToys = () => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert("deleted successfully");
+            toast("Deleted successfully");
 
             const remaining = cars.filter((car) => car._id !== id);
             setCars(remaining);
@@ -108,6 +110,7 @@ const MyToys = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </div>
   );
 };

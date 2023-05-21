@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 const ShopByCategory = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   console.log(data);
   const [fetchedData, setFetchedData] = useState("car");
@@ -12,12 +13,17 @@ const ShopByCategory = () => {
       .then((res) => res.json())
       .then((result) => {
         setData(result);
+        setLoading(false)
       });
   }, [fetchedData]);
 
   const handleTabClick = (index) => {
     setFetchedData(index);
   };
+
+  if (loading) {
+    return <div className="text-center"><progress className="progress w-56 ml-56 me-56 mt-10 mb-10 bg-red-500"></progress>;</div>
+  }
 
   return (
     <div className="text-center">
