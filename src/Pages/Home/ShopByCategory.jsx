@@ -30,14 +30,13 @@ const ShopByCategory = () => {
       <h2 className="text-6xl font-bold mt-20">Shop by Category</h2>
       <div className="text-center mt-10">
         <Tabs>
-          <TabList>
-            <Tab onClick={() => handleTabClick("car")}>CAR</Tab>
-            <Tab onClick={() => handleTabClick("jeep")}>JEEP</Tab>
-            <Tab onClick={() => handleTabClick("truck")}>TRUCK</Tab>
+          <TabList className="">
+            <Tab onClick={() => handleTabClick("car")} className="tab tab-active mr-10 bg-violet-700 text-white rounded">CAR</Tab>
+            <Tab onClick={() => handleTabClick("jeep")} className="tab tab-active mr-10 bg-violet-700 text-white rounded">JEEP</Tab>
+            <Tab onClick={() => handleTabClick("truck")} className="tab tab-active bg-violet-700 text-white rounded">TRUCK</Tab>
           </TabList>
 
           <TabPanel>
-            <h2>Any content 1</h2>
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
                 <div
@@ -73,7 +72,6 @@ const ShopByCategory = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
                 <div
@@ -109,7 +107,7 @@ const ShopByCategory = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 3</h2>
+
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
                 <div
@@ -134,8 +132,8 @@ const ShopByCategory = () => {
                     </p>
                     <div className="card-actions justify-center">
                       <Link to={`/viewDetails/${product._id}`}>
-                        <button className="btn btn-secondary btn-xs">
-                          details
+                        <button className="btn btn-primary">
+                          Details
                         </button>
                       </Link>
                     </div>

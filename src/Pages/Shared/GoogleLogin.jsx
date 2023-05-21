@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import google from "../../assets/images/google.png";
+
 import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
@@ -24,12 +24,9 @@ const GoogleLogin = () => {
   return (
     <div className="">
       <div className="divider">OR</div>
-      <div><img
-        onClick={handleGoogleSignIn}
-        className="w-12 h-12"
-        src={google}
-        alt=""
-      /></div>
+      <div className="form-control mt-6"><button onClick={handleGoogleSignIn} className="btn bg-purple-900 btn-outline text-white">With Google</button>
+
+      </div>
 
      
     </div>

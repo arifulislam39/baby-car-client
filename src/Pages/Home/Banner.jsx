@@ -116,8 +116,8 @@ const Banner = () => {
 
         <div className="absolute rounded-xl flex items-center pl-16 h-full top-0 left-0 right-5 bottom-5 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0) 100%)]">
           <div className="text-white space-y-6 w-1/2">
-            <h2 className="text-7xl font-bold">Best Kids Store.</h2>
-            <h3 className="text-4xl font-bold">Off Roader Kids Jeep</h3>
+            <h2 className="lg:text-7xl font-bold">Best Kids Store.</h2>
+            <h3 className="lg:text-4xl font-bold">Off Roader Kids Jeep</h3>
             <p>
               R/C Electric Motor With Rechargeable Battery Operated Ride On Jeep
               For Kids.
