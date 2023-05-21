@@ -9,9 +9,10 @@ const UpdateToy = () => {
     event.preventDefault();
     const form = event.target;
 
-    const price = form.price.value;
+    const priceString = form.price.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
+    const price =parseInt(priceString)
 
     const update = {
       price,
