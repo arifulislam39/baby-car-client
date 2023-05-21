@@ -83,7 +83,7 @@ const ShopByCategory = () => {
                   <figure>
                     <img src={product.photo} alt="" className="w-full h-64" />
                   </figure>
-                  <div className="card-body">
+                  <div className="card-body bg-cyan-200">
                     <h2 className="card-title">{product.toy_name}</h2>
 
                     <p className="text-left">
@@ -160,7 +160,7 @@ const ShopByCategory = () => {
                   <figure>
                     <img src={product.photo} alt="" className="w-full h-64" />
                   </figure>
-                  <div className="card-body">
+                  <div className="card-body bg-fuchsia-200">
                     <h2 className="card-title">{product.toy_name}</h2>
 
                     <p className="text-left">
