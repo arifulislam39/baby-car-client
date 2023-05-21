@@ -10,6 +10,7 @@ import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 import MyToys from "../Pages/MyToys/MyToys";
 import ViewDetails from "../Pages/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
+import Blogs from "../Pages/Blogs/Blogs";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
           path:"updateToy/:id",
           element:<UpdateToy></UpdateToy>,
           loader:({params})=>fetch(`https://baby-car-server.vercel.app/myToys/${params.id}`),
+        },
+        {
+          path:"/blog",
+          element:<Blogs></Blogs>
         }
        
        
