@@ -1,8 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Head from "../../HeadTitle/Head";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UpdateToy = () => {
   const update = useLoaderData();
@@ -15,7 +14,7 @@ const UpdateToy = () => {
     const priceString = form.price.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const price =parseInt(priceString)
+    const price = parseFloat(priceString);
 
     const update = {
       price,
@@ -56,7 +55,7 @@ const UpdateToy = () => {
               <input
                 name="price"
                 type="text"
-                defaultValue={`$` + price}
+                defaultValue={price}
                 className="input input-bordered input-primary"
               />
             </div>
@@ -87,7 +86,7 @@ const UpdateToy = () => {
           </div>
           <div className="form-control mt-6">
             <input
-            onClick={notify}
+              onClick={notify}
               className="btn btn-primary btn-block"
               type="submit"
               value="Update"

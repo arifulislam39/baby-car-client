@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Head from "../../HeadTitle/Head";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -19,7 +19,7 @@ const AddToy = () => {
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const price =parseInt(priceString)
+    const price = parseFloat(priceString);
 
     const add = {
       seller_name,
@@ -99,7 +99,7 @@ const AddToy = () => {
               </label>
               <input
                 name="price"
-                defaultValue="$"
+                defaultValue=""
                 type="text"
                 className="input input-bordered input-primary"
               />
@@ -161,7 +161,8 @@ const AddToy = () => {
             ></textarea>
           </div>
           <div className="form-control mt-6">
-            <input onClick={notify}
+            <input
+              onClick={notify}
               className="btn btn-primary btn-block"
               type="submit"
               value="Add"

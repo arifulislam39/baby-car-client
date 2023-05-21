@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../../Providers/AuthProvider"
 import Head from "../../HeadTitle/Head";
 
 //const option = [{ value: "price-ascending" }, { value: "price-descending" }];
@@ -11,19 +11,18 @@ import Head from "../../HeadTitle/Head";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [cars, setCars] = useState([]);
-  const [selectOption, setSelectOption] = useState(null);
+ const [ascending, setAscending]=useState(true);
   console.log(cars);
 
   //get logged user data from the database by email
   useEffect(() => {
-    fetch(`https://baby-car-server.vercel.app/allToys/${user?.email}`)
+    fetch(`https://baby-car-server.vercel.app/allToys/${user?.email}?sort=${ascending? 'ascending' : 'descending'}`)
       .then((res) => res.json())
       .then((result) => {
         setCars(result);
         console.log(result);
       });
-  }, [user, selectOption]);
-
+  }, [user,ascending]);
   //deleted single data from my toys
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete it?");
@@ -44,9 +43,6 @@ const MyToys = () => {
     }
   };
 
-  const handleSortOrderChange = (event) => {
-    setSelectOption(event.target.value);
-  };
 
   return (
     <div>
@@ -64,14 +60,10 @@ const MyToys = () => {
             <div className="">
               <h1 className="mb-5 text-5xl font-bold">MY TOYS</h1>
 
-              <select
-                className="select select-info w-full max-w-xs text-black"
-                value={selectOption}
-                onChange={handleSortOrderChange}
-              >
-                <option>Ascending</option>
-                <option>Descending</option>
-              </select>
+              <button className="btn btn-primary" onClick={()=>setAscending(!ascending)}>
+                {ascending? "Price-Ascending" : "Price-Descending"}
+              </button>
+
             </div>
           </div>
         </div>
