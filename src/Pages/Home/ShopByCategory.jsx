@@ -1,8 +1,14 @@
+import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { AuthContext } from "../../Providers/AuthProvider";
+
+
+
 const ShopByCategory = () => {
+  const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   console.log(data);
@@ -13,29 +19,58 @@ const ShopByCategory = () => {
       .then((res) => res.json())
       .then((result) => {
         setData(result);
-        setLoading(false)
+        setLoading(false);
       });
   }, [fetchedData]);
 
   const handleTabClick = (index) => {
     setFetchedData(index);
   };
+  
+  //user check
+  const handleUserCheck =()=>{
+    if(!user){
+      confirm('You have to log in first to view details')
+    }
+  }
 
+  //loading
   if (loading) {
-    return <div className="text-center"><progress className="progress w-56 ml-56 me-56 mt-10 mb-10 bg-red-500"></progress>;</div>
+    return (
+      <div className="text-center">
+        <progress className="progress w-56 ml-56 me-56 mt-10 mb-10 bg-red-500"></progress>
+        ;
+      </div>
+    );
   }
 
   return (
     <div className="text-center">
+
       <h2 className="text-6xl font-bold mt-20">Shop by Category</h2>
       <div className="text-center mt-10">
         <Tabs>
           <TabList className="">
-            <Tab onClick={() => handleTabClick("car")} className="tab tab-active mr-10 bg-violet-700 text-white rounded">CAR</Tab>
-            <Tab onClick={() => handleTabClick("jeep")} className="tab tab-active mr-10 bg-violet-700 text-white rounded">JEEP</Tab>
-            <Tab onClick={() => handleTabClick("truck")} className="tab tab-active bg-violet-700 text-white rounded">TRUCK</Tab>
+            <Tab
+              onClick={() => handleTabClick("car")}
+              className="tab tab-active mr-10 bg-violet-700 text-white rounded"
+            >
+              CAR
+            </Tab>
+            <Tab
+              onClick={() => handleTabClick("jeep")}
+              className="tab tab-active mr-10 bg-violet-700 text-white rounded"
+            >
+              JEEP
+            </Tab>
+            <Tab
+              onClick={() => handleTabClick("truck")}
+              className="tab tab-active bg-violet-700 text-white rounded"
+            >
+              TRUCK
+            </Tab>
           </TabList>
-
+          {/* TabPanel 3 */}
           <TabPanel>
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
@@ -60,17 +95,20 @@ const ShopByCategory = () => {
                       {product.rating}
                     </p>
                     <div className="card-actions justify-center">
-                      <Link to={`/viewDetails/${product._id}`}>
-                        <button className="btn btn-secondary btn-xs">
-                          details
-                        </button>
-                      </Link>
+                     
+                        <Link to={`/viewDetails/${product._id}`}>
+                          <button onClick={handleUserCheck} className="btn btn-primary bg-indigo-500">
+                            Details
+                          </button>
+                        </Link>
+                      
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </TabPanel>
+          {/* TabPanel 2 */}
           <TabPanel>
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
@@ -95,19 +133,22 @@ const ShopByCategory = () => {
                       {product.rating}
                     </p>
                     <div className="card-actions justify-center">
-                      <Link to={`/viewDetails/${product._id}`}>
-                        <button className="btn btn-secondary btn-xs">
-                          details
-                        </button>
-                      </Link>
+                     
+                        <Link to={`/viewDetails/${product._id}`}>
+                          <button onClick={handleUserCheck} className="btn btn-primary bg-indigo-500">
+                            Details
+                          </button>
+                        </Link>
+
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </TabPanel>
-          <TabPanel>
 
+          {/* TabPanel 3 */}
+          <TabPanel>
             <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10">
               {data.map((product) => (
                 <div
@@ -131,11 +172,14 @@ const ShopByCategory = () => {
                       {product.rating}
                     </p>
                     <div className="card-actions justify-center">
-                      <Link to={`/viewDetails/${product._id}`}>
-                        <button className="btn btn-primary">
-                          Details
-                        </button>
-                      </Link>
+                      
+                        <Link to={`/viewDetails/${product._id}`}>
+                          <button  onClick={handleUserCheck} className="btn btn-primary bg-indigo-500">
+                            Details
+                          </button>
+                        </Link>
+  
+                 
                     </div>
                   </div>
                 </div>
