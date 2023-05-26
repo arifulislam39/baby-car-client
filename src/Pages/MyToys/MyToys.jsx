@@ -12,7 +12,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [cars, setCars] = useState([]);
  const [ascending, setAscending]=useState(true);
-  console.log(cars);
+  // console.log(cars);
 
   //get logged user data from the database by email
   useEffect(() => {
@@ -23,6 +23,7 @@ const MyToys = () => {
         console.log(result);
       });
   }, [user,ascending]);
+
   //deleted single data from my toys
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete it?");
